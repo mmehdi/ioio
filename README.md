@@ -8,7 +8,7 @@ If you do not wish to compile it, you can download the .ioioapp file from [here]
 
 
 **Disclaimer** - 
-I am not responsible for any damage this code may cause to your board. I do not own any rights of this proejct. All Credits to [original author](https://github.com/ytai/ioio) of IOIO board.
+I am not responsible for any damage this code may cause to your board. I do not own any rights of this project. All credits to the [original author](https://github.com/ytai/ioio) of IOIO board.
 
 <br/>
 
