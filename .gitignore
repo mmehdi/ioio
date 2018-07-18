@@ -1,0 +1,15 @@
+firmware/app_layer_v1/dist/
+firmware/app_layer_v1/build/
+firmware/app_layer_v1/debug/
+firmware/libadb/debug/
+firmware/libadb/build/
+firmware/libadb/dist/
+firmware/libbtstack/debug/
+firmware/libbtstack/build/
+firmware/libbtstack/dist/
+firmware/libconn/debug/
+firmware/libconn/build/
+firmware/libconn/dist/
+firmware/libusb/debug/
+firmware/libusb/build/
+firmware/libusb/dist/

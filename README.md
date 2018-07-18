@@ -1,3 +1,14 @@
+Fix for IOIO-OTG v2.2 board USB Open Accessory on a non-OTG Android > 6.x device
+
+-Added a SoftReset every 3 seconds which enables the IOIO board to connect over Open Accessory USB.
+-The blinking LED means IOIO board is looking for connection. Once the connection establised, the LED will turn off.
+
+If you do not wish to compile it, you can download the .ioioapp file from here and flash it using IOIODude.
+
+
+<h2>Disclaimer</h2>
+I am not responsible for any damage this code may cause to your board. I do not own any rights of this proejct. All Credits to [original author](https://github.com/ytai/ioio) of IOIO board.
+
 <img alt="IOIO Logo" src="https://lh6.googleusercontent.com/-NtccMO1M7f4/UDhhwrx26UI/AAAAAAAAjTI/xwTI4Fb8xVQ/s887/ioio-logo.png">
 The IOIO is a board that provides a host machine the capability of interfacing with external hardware over a variety of commonly used protocols.
 The original IOIO board has been specifically designed to work with Android devices. The newer IOIO-OTG ("on the go") boards work with both Android devices and PC's (details [here](http://ytai-mer.blogspot.com/2012/05/second-generation-of-ioio-is-in-works.html)).

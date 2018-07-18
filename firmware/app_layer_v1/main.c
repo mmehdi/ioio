@@ -27,11 +27,20 @@
  * or implied.
  */
 
+
+#define GetSystemClock()            32000000UL
+#define GetPeripheralClock()        (GetSystemClock())
+#define GetInstructionClock()       (GetSystemClock() / 2)
+#define GetInstructionClockPerSecond()       (GetInstructionClock()*0.0000010*0.00001) //MHz x seconds x milliseconds
+
+
 #include "Compiler.h"
 #include "libconn/connection.h"
 #include "features.h"
 #include "protocol.h"
 #include "logging.h"
+#include "timer.h" //for adding delay DelayMS
+#include "platform.h" //for LED blink using led_on()
 
 // define in non-const arrays to ensure data space
 static char descManufacturer[] = "IOIO Open Source Project";
@@ -105,6 +114,7 @@ void AppCallback(const void* data, UINT32 data_len, int_or_ptr_t arg) {
 }
 
 int main() {
+  float count=0;
   log_init();
   log_printf("***** Hello from app-layer! *******");
 
@@ -123,6 +133,23 @@ int main() {
           log_printf("Connected");
           state = STATE_WAIT_CHANNEL_OPEN;
         }
+        //BEGIN SoftReset every 3 seconds to look for Open Accessory connection
+        else {  
+            //adjusted to 16Mhz
+            count=count+ GetInstructionClockPerSecond();
+            //count++;
+            if (count>3 ) {
+                led_on();
+                DelayMs(100);
+                led_off();
+                
+                count = 0;
+                SoftReset();            
+                ConnectionInit();
+                state = STATE_INIT;
+            } 
+        }
+        //END
         break;
 
       case STATE_WAIT_CHANNEL_OPEN:
